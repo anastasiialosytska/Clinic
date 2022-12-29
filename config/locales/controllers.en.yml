@@ -1,0 +1,7 @@
+en:
+  doctor_visits:
+    create:
+      alert: "There are no vacancies for the doctor %{name}"
+      success: "You have successfully registered with a doctor %{name}"
+    update:
+      alert: 'Something went wrong, try again'

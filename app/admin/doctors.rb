@@ -6,6 +6,8 @@ ActiveAdmin.register Doctor do
   permit_params :first_name,
                 :last_name,
                 :phone_number,
+                :password,
+                :password_confirmation,
                 :category_id
 
   index do
@@ -27,11 +29,13 @@ ActiveAdmin.register Doctor do
   form do |f|
     f.semantic_errors(*f.object.errors.attribute_names)
 
-    f.inputs 'Doctor' do
+    f.inputs I18n.t('active_admin.doctors.doctor') do
       f.input :first_name
       f.input :last_name
       f.input :phone_number
-      f.inputs 'Category' do
+      f.input :password
+      f.input :password_confirmation
+      f.inputs I18n.t('active_admin.doctors.category') do
         f.input :category, allow_destroy: true do |n_f|
           n_f.input :category_id,
                     as: :select,

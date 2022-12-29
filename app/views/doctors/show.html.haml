@@ -1,0 +1,29 @@
+%h3 Profile
+%p
+  = @doctor.full_name
+%h5 Current Patients
+%table
+  %tr.fw-bold
+    %td Name
+    %td Phone
+    %td Status
+    %td
+  - @current_doctor_visits.each do |doctor_visit|
+    %tr
+      %td= doctor_visit.user_name
+      %td= doctor_visit.user.phone_number
+      %td= doctor_visit.status
+      %td= link_to 'Give a prescription', doctor_visit_path(doctor_visit)
+%h4 Visit History
+%table
+  %tr.fw-bold
+    %td Name
+    %td Phone
+    %td Status
+    %td Prescription
+  - @closed_doctor_visits.each do |doctor_visit|
+    %tr
+      %td= doctor_visit.user_name
+      %td= doctor_visit.user.phone_number
+      %td= doctor_visit.status
+      %td= doctor_visit.appointment

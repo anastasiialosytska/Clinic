@@ -1,6 +1,7 @@
 class DoctorVisitsController < ApplicationController
   before_action :find_doctor, only: :create
-  before_action :find_doctor_visit, only: :show
+  before_action :find_doctor_visit, only: %i[show update]
+  load_and_authorize_resource
 
   MAX_OPEN_VISITS = 10
 
@@ -12,16 +13,32 @@ class DoctorVisitsController < ApplicationController
   def create
     @doctor_visit = DoctorVisit.new(user_id: current_user.id, doctor_id: @doctor.id)
 
-    return flash.now[:alert] = "There are no vacancies for the doctor #{@doctor.full_name}" if @doctor.doctor_visits.size > MAX_OPEN_VISITS
+    if @doctor.doctor_visits.size > MAX_OPEN_VISITS
+      flash.now[:alert] = t('.alert', name: @doctor.full_name)
+    else
+      @doctor_visit.save
+      redirect_to @doctor_visit, success: t('.success', name: @doctor.full_name)
+    end
+  end
 
-    @doctor_visit.save
-    redirect_to @doctor_visit, success: "You have successfully registered with a doctor #{@doctor.full_name}"
+  def update
+    if @doctor_visit.update(doctor_visit_params)
+      redirect_to @doctor_visit.doctor
+      @doctor_visit.update(status: 1)
+    else
+      flash.now[:alert] = t('.alert')
+      render :show
+    end
   end
 
   private
 
+  def doctor_visit_params
+    params.require(:doctor_visit).permit(:appointment)
+  end
+
   def find_doctor
-    @doctor = Doctor.find(params[:doctor_id]).decorate
+    @doctor = Doctor.find(params[:doctor_visit][:doctor_id]).decorate
   end
 
   def find_doctor_visit

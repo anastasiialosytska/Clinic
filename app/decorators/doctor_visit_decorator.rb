@@ -8,4 +8,8 @@ class DoctorVisitDecorator < Draper::Decorator
   def doctor_category
     object.doctor.category.name
   end
+
+  def user_name
+    "#{object.user.first_name} #{object.user.last_name}"
+  end
 end

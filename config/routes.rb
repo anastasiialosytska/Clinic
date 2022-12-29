@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root to: 'home#show'
   resource :user, only: :show
   resource :doctor, only: %i[index show]
-  resources :doctor_visits, only: %i[show create]
+  resources :doctor_visits, only: %i[show create update]
 end

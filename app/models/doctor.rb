@@ -10,15 +10,16 @@ class Doctor < ApplicationRecord
   has_many :users, through: :doctor_visits
   belongs_to :category
 
+  PHONE_NUMBER_REGEXP = /\A[\d]{3}-[\d]{3}-[\d]{4}\z/.freeze
+
+  validates :first_name, :last_name, presence: true
+  validates :phone_number, presence: true, format: { with: PHONE_NUMBER_REGEXP }, uniqueness: true
+
   def email_required?
     false
   end
 
   def will_save_change_to_email?
-    false
-  end
-
-  def password_required?
     false
   end
 end

@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'haml-rails', '~> 2.0'
 
+gem 'rails-i18n', '~> 6.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -32,13 +34,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'devise'
+gem 'cancancan'
 gem 'activeadmin'
 
 gem 'draper'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
 end
 
 group :development do

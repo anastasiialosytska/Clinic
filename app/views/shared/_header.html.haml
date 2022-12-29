@@ -3,6 +3,11 @@
     .navbar-header
       %nav.navbar.navbar-light.bg-light
         %span.navbar-brand= link_to 'MyClinic', root_path, class: "btn btn-outline-primary"
-        %span= link_to 'Sign up', new_user_registration_path
-        %span= link_to 'Log in', new_user_session_path
-        %span= button_to 'Log out', destroy_user_session_path, method: :delete
+        - if current_user
+          %span= button_to 'Log out', destroy_user_session_path, method: :delete
+        - elsif current_doctor
+          %span= button_to 'Log out', destroy_doctor_session_path, method: :delete
+        - else
+          %span= link_to 'Become a patient', new_user_registration_path
+          %span= link_to 'Log in as patient', new_user_session_path
+          %span= link_to 'Log in as doctor', new_doctor_session_path

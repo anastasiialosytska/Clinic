@@ -21,7 +21,7 @@
       %td= doctor.category.name
       %td= doctor.phone_number
       %td
-        = button_to 'Make an appointment', doctor_visits_path, params: { doctor_id: doctor.id }
+        = button_to 'Make an appointment', doctor_visits_path, params: { doctor_visit: { doctor_id: doctor.id } }
 %h4 My visits
 %table
   %tr.fw-bold
@@ -36,4 +36,3 @@
       %td= doctor_visit.status
       %td
         = link_to 'Show', doctor_visit_path(doctor_visit)
-
