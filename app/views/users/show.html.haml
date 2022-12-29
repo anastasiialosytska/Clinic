@@ -1,19 +1,19 @@
-%h3 Profile
+%h3= t('.title')
 %p
   = @user.full_name
-%h5 Doctors
+%h5= t('.doctors')
 %ul.list-inline.pt-10.mb-25.mr-240
   %li.mr-35
-    = link_to 'All', user_path, class: 'filter-link'
+    = link_to t('.all'), user_path, class: 'filter-link'
   - @categories.each do |category|
     %li.mr-35
       = link_to user_path({filter: {category: category.id}}), class: 'filter-link' do
         = category.name
 %table
   %tr.fw-bold
-    %td Name
-    %td Speciality
-    %td Phone
+    %td= t('.name')
+    %td= t('.speciality')
+    %td= t('.phone')
     %td
   - @doctors.each do |doctor|
     %tr
@@ -21,13 +21,13 @@
       %td= doctor.category.name
       %td= doctor.phone_number
       %td
-        = button_to 'Make an appointment', doctor_visits_path, params: { doctor_visit: { doctor_id: doctor.id } }
-%h4 My visits
+        = button_to t('.make_an_appointment'), doctor_visits_path, params: { doctor_visit: { doctor_id: doctor.id } }
+%h4= t('.my_visits')
 %table
   %tr.fw-bold
-    %td Doctor
-    %td Speciality
-    %td Status
+    %td= t('.doctor')
+    %td= t('.speciality')
+    %td= t('.status')
     %td
   - @doctor_visits.each do |doctor_visit|
     %tr
@@ -35,4 +35,4 @@
       %td= doctor_visit.doctor_category
       %td= doctor_visit.status
       %td
-        = link_to 'Show', doctor_visit_path(doctor_visit)
+        = link_to t('.show'), doctor_visit_path(doctor_visit)

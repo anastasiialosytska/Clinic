@@ -1,0 +1,15 @@
+en:
+  users:
+    show:
+      title: 'My Profile'
+      doctors: 'Doctors'
+      all: 'All'
+      name: 'Name'
+      speciality: 'Speciality'
+      phone: 'Phone'
+      make_an_appointment: 'Make an appointment'
+      my_visits: 'My Visits'
+      doctor: 'Doctor'
+      status: 'Status'
+      show: 'Show'
+

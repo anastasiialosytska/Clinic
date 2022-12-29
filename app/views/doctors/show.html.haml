@@ -1,26 +1,26 @@
-%h3 Profile
+%h3= t('.title')
 %p
   = @doctor.full_name
-%h5 Current Patients
+%h5= t('.current_patients')
 %table
   %tr.fw-bold
-    %td Name
-    %td Phone
-    %td Status
+    %td= t('.name')
+    %td= t('.phone')
+    %td= t('.status')
     %td
   - @current_doctor_visits.each do |doctor_visit|
     %tr
       %td= doctor_visit.user_name
       %td= doctor_visit.user.phone_number
       %td= doctor_visit.status
-      %td= link_to 'Give a prescription', doctor_visit_path(doctor_visit)
-%h4 Visit History
+      %td= link_to t('.give_a_prescription'), doctor_visit_path(doctor_visit)
+%h4= t('.visit_history')
 %table
   %tr.fw-bold
-    %td Name
-    %td Phone
-    %td Status
-    %td Prescription
+    %td= t('.name')
+    %td= t('.phone')
+    %td= t('.status')
+    %td= t('.prescription')
   - @closed_doctor_visits.each do |doctor_visit|
     %tr
       %td= doctor_visit.user_name

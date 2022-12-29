@@ -2,12 +2,12 @@
   .container
     .navbar-header
       %nav.navbar.navbar-light.bg-light
-        %span.navbar-brand= link_to 'MyClinic', root_path, class: "btn btn-outline-primary"
+        %span.navbar-brand= link_to t('.title'), root_path, class: "btn btn-outline-primary"
         - if current_user
-          %span= button_to 'Log out', destroy_user_session_path, method: :delete
+          %span= button_to t('.log_out'), destroy_user_session_path, method: :delete
         - elsif current_doctor
-          %span= button_to 'Log out', destroy_doctor_session_path, method: :delete
+          %span= button_to t('.log_out'), destroy_doctor_session_path, method: :delete
         - else
-          %span= link_to 'Become a patient', new_user_registration_path
-          %span= link_to 'Log in as patient', new_user_session_path
-          %span= link_to 'Log in as doctor', new_doctor_session_path
+          %span= link_to t('.become_a_patient'), new_user_registration_path
+          %span= link_to t('.log_in_as_patient'), new_user_session_path
+          %span= link_to t('.log_in_as_doctor'), new_doctor_session_path

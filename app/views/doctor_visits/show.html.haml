@@ -1,8 +1,8 @@
-%h3 Visit
-%p Patient: #{@user.full_name}
-%p Doctor: #{@doctor.full_name}
-%p Status: #{@doctor_visit.status}
-%p Appointment: #{@doctor_visit.appointment}
+%h3= t('.title')
+%p= t('.patient', name: @user.full_name)
+%p= t('.doctor', name: @doctor.full_name)
+%p= t('.status', status: @doctor_visit.status)
+%p= t('.appointment', appointment: @doctor_visit.appointment)
 - if can? :update, @doctor_visit
   = form_with model: @doctor_visit, local: true do |form|
     .form-group
@@ -10,4 +10,4 @@
         = form.text_area :appointment
       %p.text-center= form.submit class: 'btn btn-primary mt-2'
 %p
-  = link_to 'Back', :back
+  = link_to t('.back'), :back

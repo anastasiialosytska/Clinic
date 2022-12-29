@@ -1,0 +1,9 @@
+en:
+  doctor_visits:
+    show:
+      title: 'Card of visit'
+      patient: "Patient: %{name}"
+      doctor: "Doctor: %{name}"
+      status: "Status: %{status}"
+      appointment: "Appointment: %{appointment}"
+      back: 'Back'

@@ -1,0 +1,8 @@
+en:
+  shared:
+    header:
+      title: 'MyClinic'
+      log_out: 'Log out'
+      become_a_patient: 'Become a patient'
+      log_in_as_patient: 'Log in as patient'
+      log_in_as_doctor: 'Log in as doctor'

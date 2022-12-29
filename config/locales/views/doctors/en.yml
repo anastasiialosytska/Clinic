@@ -1,0 +1,11 @@
+en:
+  doctors:
+    show:
+      title: 'My Profile'
+      current_patients: 'Current Patients'
+      name: 'Name'
+      phone: 'Phone'
+      status: 'Status'
+      prescription: 'Prescription'
+      give_a_prescription: 'Give a prescription'
+      visit_history: 'Visit history'
