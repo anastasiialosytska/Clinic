@@ -1,0 +1,39 @@
+%h3 Profile
+%p
+  = @user.full_name
+%h5 Doctors
+%ul.list-inline.pt-10.mb-25.mr-240
+  %li.mr-35
+    = link_to 'All', user_path, class: 'filter-link'
+  - @categories.each do |category|
+    %li.mr-35
+      = link_to user_path({filter: {category: category.id}}), class: 'filter-link' do
+        = category.name
+%table
+  %tr.fw-bold
+    %td Name
+    %td Speciality
+    %td Phone
+    %td
+  - @doctors.each do |doctor|
+    %tr
+      %td= doctor.full_name
+      %td= doctor.category.name
+      %td= doctor.phone_number
+      %td
+        = button_to 'Make an appointment', doctor_visits_path, params: { doctor_id: doctor.id }
+%h4 My visits
+%table
+  %tr.fw-bold
+    %td Doctor
+    %td Speciality
+    %td Status
+    %td
+  - @doctor_visits.each do |doctor_visit|
+    %tr
+      %td= doctor_visit.doctor_name
+      %td= doctor_visit.doctor_category
+      %td= doctor_visit.status
+      %td
+        = link_to 'Show', doctor_visit_path(doctor_visit)
+

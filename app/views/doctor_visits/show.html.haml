@@ -1,0 +1,7 @@
+%h3 Your visit
+%p Patient: #{@user.full_name}
+%p Doctor: #{@doctor.full_name}
+%p Status: #{@doctor_visit.status}
+%p Appointment: #{@doctor_visit.appointment}
+%p
+  = link_to 'Back', :back
