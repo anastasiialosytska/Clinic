@@ -42,6 +42,10 @@ gem 'draper'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'faker'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
@@ -61,6 +65,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
