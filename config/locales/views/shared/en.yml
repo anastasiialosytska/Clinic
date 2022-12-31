@@ -2,6 +2,8 @@ en:
   shared:
     header:
       title: 'MyClinic'
+      home: 'Home'
+      profile: 'My profile'
       log_out: 'Log out'
       become_a_patient: 'Become a patient'
       log_in_as_patient: 'Log in as patient'

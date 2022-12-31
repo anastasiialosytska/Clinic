@@ -1,4 +1,6 @@
 en:
   home:
     show:
-      profile: 'My Profile'
+      welcome: 'Virtual healthcare & prescriptions'
+      lets_find: "Let's find your doctor"
+

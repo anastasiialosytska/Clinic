@@ -8,4 +8,7 @@ class DoctorVisit < ApplicationRecord
     open: 0,
     closed: 1
   }
+
+  scope :open, -> { where(status: 0) }
+  scope :closed, -> { where(status: 1) }
 end

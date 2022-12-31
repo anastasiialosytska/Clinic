@@ -4,4 +4,4 @@ en:
       alert: "There are no vacancies for the doctor %{name}"
       success: "You have successfully registered with a doctor %{name}"
     update:
-      alert: 'Something went wrong, try again'
+      alert: 'Appointment must be at least 20 characters long'

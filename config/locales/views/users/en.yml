@@ -7,9 +7,9 @@ en:
       name: 'Name'
       speciality: 'Speciality'
       phone: 'Phone'
-      make_an_appointment: 'Make an appointment'
+      book_a_visit: 'Book a visit'
       my_visits: 'My Visits'
       doctor: 'Doctor'
       status: 'Status'
-      show: 'Show'
+      show: 'Show details'
 
