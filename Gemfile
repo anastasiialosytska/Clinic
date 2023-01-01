@@ -38,12 +38,12 @@ gem 'cancancan'
 gem 'activeadmin'
 
 gem 'draper'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'rspec-rails', '~> 6.0.0'
-  gem 'faker'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
 end
