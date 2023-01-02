@@ -1,0 +1,19 @@
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    %h2.mt-5.mb-4 Log in
+    .card
+      .card-body
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-group
+            %p
+              = f.label :phone_number
+              = f.telephone_field :phone_number, autofocus: true, autocomplete: "phone", class: 'form-control', placeholder: '000-000-0000'
+            %p
+              = f.label :password
+              = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+            - if devise_mapping.rememberable?
+              .form-check
+                = f.label :remember_me, class: 'form-check-label' do
+                  = f.check_box :remember_me, class: 'form-check-input'
+                  = f.label :remember_me
+            = f.submit 'Log in', class: 'btn btn-primary mt-2'

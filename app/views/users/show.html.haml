@@ -1,0 +1,43 @@
+.row.mb-4.mt-5
+  %h3= t('.title')
+  %p
+    = @user.full_name
+.row.mb-5
+  %h4= t('.doctors')
+  %ul.list-inline.pt-10.mb-25.mr-240
+    %li.list-inline-item.mr-35
+      = link_to t('.all'), user_path, class: 'filter-link link-secondary'
+    - @categories.each do |category|
+      %li.list-inline-item.mr-35
+        = link_to user_path({filter: {category: category.id}}), class: 'filter-link link-secondary' do
+          = category.name
+  %table.table
+    %tr.fw-bold
+      %td= t('.name')
+      %td= t('.speciality')
+      %td= t('.phone')
+      %td
+    - @doctors.each do |doctor|
+      %tr
+        %td= doctor.full_name
+        %td= doctor.category.name
+        %td= doctor.phone_number
+        %td
+          = button_to doctor_visits_path, params: { doctor_visit: { doctor_id: doctor.id } }, class: 'btn btn-outline-secondary' do
+            = t('.book_a_visit')
+            %i.bi.bi-pen
+.row
+  %h4= t('.my_visits')
+  %table.table
+    %tr.fw-bold
+      %td= t('.doctor')
+      %td= t('.speciality')
+      %td= t('.status')
+      %td
+    - @doctor_visits.each do |doctor_visit|
+      %tr
+        %td= doctor_visit.doctor_name
+        %td= doctor_visit.doctor_category
+        %td= doctor_visit.status
+        %td
+          = link_to t('.show'), doctor_visit_path(doctor_visit), class: 'btn btn-outline-secondary'

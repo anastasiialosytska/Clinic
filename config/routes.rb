@@ -1,3 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :doctors
+  devise_for :admins, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  root to: 'home#show'
+  resources :users, only: :show
+  resources :doctors, only: :show
+  resources :doctor_visits, only: %i[show create update]
 end

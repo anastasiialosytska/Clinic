@@ -1,0 +1,19 @@
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    %h2.mt-5.mb-4= t('.title')
+    .card
+      .card-body
+        %p= t('.patient', name: @user.full_name)
+        %p= t('.doctor', name: @doctor.full_name)
+        %p= t('.status', status: @doctor_visit.status)
+        %p= t('.appointment', appointment: @doctor_visit.appointment)
+        - if can? :update, @doctor_visit
+          = form_with model: @doctor_visit, local: true do |form|
+            .form-group
+              %p
+                = form.text_area :appointment, class: 'form-control js-textarea', style: "min-width: 100%"
+              %p.text-center= form.submit 'Save prescription', class: 'btn btn-primary mt-2'
+        %p
+          = link_to :back, class: 'btn btn-outline-secondary' do
+            %i.bi.bi-arrow-left
+            = t('.back')
