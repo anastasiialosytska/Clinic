@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 ActiveAdmin.register Doctor do
   decorate_with DoctorDecorator
 
@@ -47,3 +48,4 @@ ActiveAdmin.register Doctor do
     f.actions
   end
 end
+# rubocop:enable Metrics/BlockLength

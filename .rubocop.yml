@@ -1,0 +1,17 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'vendor/bundle/**/*'
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false

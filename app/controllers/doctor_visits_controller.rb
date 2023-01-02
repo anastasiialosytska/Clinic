@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DoctorVisitsController < ApplicationController
   before_action :find_doctor, only: :create
   before_action :find_doctor_visit, only: %i[show update]

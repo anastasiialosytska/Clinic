@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def current_auth_resource
     doctor_signed_in? ? current_doctor : current_user

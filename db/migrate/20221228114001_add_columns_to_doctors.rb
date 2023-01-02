@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnsToDoctors < ActiveRecord::Migration[6.1]
   def change
     add_column :doctors, :first_name, :string, null: false
