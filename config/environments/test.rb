@@ -54,7 +54,7 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
-  onfig.active_record.encryption.primary_key = "test"
+  config.active_record.encryption.primary_key = "test"
   config.active_record.encryption.deterministic_key = "test"
   config.active_record.encryption.key_derivation_salt = "test"
 
