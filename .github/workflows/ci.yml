@@ -25,6 +25,7 @@ jobs:
 
       - name: Compile assets
         run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
           bundle exec rake assets:clobber
           bundle exec rake assets:precompile
 
