@@ -74,10 +74,9 @@ jobs:
 
       - uses: browser-actions/setup-chrome@v1
       - run: chrome --version
-      - uses: actions/checkout@v4
 
       - name: Run rspec
-        run: bundle exec rspec --format progress
+        run: bin/rails test:all
 
       - name: Upload coverage results
         uses: actions/upload-artifact@v3
