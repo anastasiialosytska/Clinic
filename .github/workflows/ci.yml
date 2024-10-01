@@ -78,7 +78,7 @@ jobs:
           chrome-version: stable
 
       - name: Run rspec
-        run: bundle exec rake db:create db:schema:load --trace
+        run: bundle exec rspec --format progress
 
       - name: Upload coverage results
         uses: actions/upload-artifact@v3
