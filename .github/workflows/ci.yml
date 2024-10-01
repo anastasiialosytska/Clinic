@@ -72,8 +72,10 @@ jobs:
             app/assets/builds
           key: cache-assets-v1-${{ runner.os }}-${{ github.ref }}
 
-      - uses: browser-actions/setup-chrome@v1
-      - run: chrome --version
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
 
       - name: Run rspec
         run: bin/rails test:all
