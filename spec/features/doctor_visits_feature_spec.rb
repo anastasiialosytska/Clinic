@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'DoctorVisit', js: true, type: :feature do
+RSpec.describe 'DoctorVisit', :js, type: :feature do
   let!(:doctor_visit) { create :doctor_visit }
   let!(:doctor) { doctor_visit.doctor }
 
