@@ -15,6 +15,7 @@ Capybara.register_driver(:chrome) do |app|
   options.add_argument('--disable-extensions')
   options.add_argument('--headless')
   options.add_argument('disable-dev-shm-usage')
+  options.add_argument('--remote-debugging-pipe')
   options.add_argument('enable-features=NetworkService,NetworkServiceInProcess')
   options.add_argument('disable-gpu')
   options.add_argument('disable-features=VizDisplayCompositor')
