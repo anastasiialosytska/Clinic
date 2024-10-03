@@ -72,11 +72,6 @@ jobs:
             app/assets/builds
           key: cache-assets-v1-${{ runner.os }}-${{ github.ref }}
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: stable
-
       - name: Run rspec
         run: bundle exec rspec --format progress
 
